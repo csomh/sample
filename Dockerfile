@@ -14,5 +14,6 @@ RUN python /home/sample/manage.py migrate
 
 EXPOSE 8080
 
-ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
-#ENTRYPOINT ["sleep","999999999"]
+#ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
+ENTRYPOINT ["sleep","999999999"]
+#ENTRYPOINT ["python /home/sample/manage.py runserver 8080"]
