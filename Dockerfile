@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos
 
 RUN yum -y install httpd mod_wsgi python-psycopg2
 
