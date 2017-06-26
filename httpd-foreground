@@ -6,7 +6,6 @@ set -x
 
 # Apache gets grumpy about PID files pre-existing
 id
-ls -la /run/httpd/httpd.pid
 rm -f /run/httpd/httpd.pid
 
 exec httpd -DFOREGROUND
