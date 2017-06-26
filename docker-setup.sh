@@ -2,10 +2,11 @@
 
 # setup directory for data
 mkdir -p /data
-chown -R httpd:0 /data
+chown -R apache:0 /data
 chmod g+w -R /data
-chown -R httpd:0 /run/httpd
-chown -R httpd:0 /var
+chown -R apache:0 /run/httpd
+chown -R apache:0 /var
+chown -R apache:0 /home/sample
 
 chgrp -R 0 /run/httpd
 chmod -R g+rw /run/httpd

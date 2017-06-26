@@ -8,7 +8,7 @@ RUN groupadd -r httpd && useradd -r -g httpd httpd
 RUN yum -y update \
     && yum -y install epel-release \
     && yum -y install --setopt=tsflags=nodocs \
-        httpd mod_wsgi python-psycopg2 python-django \
+        httpd mod_wsgi python-psycopg2 python-pip \
     && yum -y clean all
 
 #Copying apache config file to apt folder
@@ -29,8 +29,8 @@ RUN chmod 0755 /bin/httpd-foreground
 # RUN python get-pip.py
 
 # #installing django
-# RUN pip install django
-# RUN python /home/sample/manage.py migrate
+RUN pip install django
+RUN python /home/sample/manage.py migrate
 
 #RUN httpd -k restart
 #RUN cd /home/
