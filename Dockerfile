@@ -17,6 +17,8 @@ COPY django.conf /etc/httpd/conf.d/
 #Copying django application code in to /home/ directory
 COPY sample /home/
 
+COPY httpd-foreground /bin/httpd-foreground
+RUN chmod 0755 /bin/httpd-foreground
 #installing pip
 # RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 # RUN python get-pip.py
@@ -31,6 +33,6 @@ COPY sample /home/
 
 EXPOSE 8080
 
-ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
+ENTRYPOINT ["httpd-foreground"]
 #ENTRYPOINT ["sleep","999999999"]
 #ENTRYPOINT ["python /home/sample/manage.py runserver 8080"]
