@@ -17,6 +17,11 @@ COPY django.conf /etc/httpd/conf.d/
 #Copying django application code in to /home/ directory
 COPY sample /home/
 
+COPY docker-setup.sh /
+RUN chmod 0755 /docker-setup.sh \
+    && /docker-setup.sh \
+    && rm -f /docker-setup.sh
+
 COPY httpd-foreground /bin/httpd-foreground
 RUN chmod 0755 /bin/httpd-foreground
 #installing pip
