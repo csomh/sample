@@ -3,7 +3,7 @@ FROM centos:latest
 # Add our user and group first to make sure their IDs get assigned consistently,
 # regardless of whatever dependencies get added.
 # Found at https://github.com/gencat/httpd-openshift/blob/master/Dockerfile
-RUN groupadd -r httpd && useradd -r -g httpd httpd
+RUN groupadd -r apache && useradd -r -g apache apache
 
 RUN yum -y update \
     && yum -y install epel-release \
