@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
-
+set -x
 # File from:
 # <https://github.com/gencat/httpd-openshift/blob/master/httpd-foreground>
 
 # Apache gets grumpy about PID files pre-existing
+id
+ls -la /run/httpd/httpd.pid
 rm -f /run/httpd/httpd.pid
 
 exec httpd -DFOREGROUND
